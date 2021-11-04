@@ -1,0 +1,218 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="680" Width="1000" MinHeight="500" MinWidth="750">
+    <Grid>
+        <TabControl HorizontalAlignment="Center" Height="650" VerticalAlignment="Top" Width="980" MinHeight="650" MinWidth="980">
+            <TabItem Header="Валюты">
+                <Grid Background="#FFF9F5F5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="490*"/>
+                        <ColumnDefinition Width="490*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="490*"/>
+                        <RowDefinition Height="490*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Grid.Row="0" Grid.Column="0" Header="Dollar" BorderThickness="2" BorderBrush="Blue" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите курс доллара" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите сумму" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="dollarEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в рублях" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="DollarRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="DollarSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="RubDollarSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="0" Grid.Column="1" Header="Euro" BorderThickness="2" BorderBrush="Red" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите курс Евро" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите сумму" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="euroEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в рублях" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="EuroRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="EuroSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="RubEuroSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Grid.Column="0" Header="Grivna" BorderThickness="2" BorderBrush="Yellow" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите курс Гривны" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите сумму" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="grivnaEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в рублях" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="GrivnaRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="GrivnaSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="RubGrivnaSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Grid.Column="1" Header="Drama" BorderThickness="2" BorderBrush="Green" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите курс Драмы" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите сумму" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="dramaEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в рублях" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="DramaRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="DramaSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="RubDramaSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Расстояния">
+                <Grid Background="Azure">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="490*"/>
+                        <ColumnDefinition Width="490*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="490*"/>
+                        <RowDefinition Height="490*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Grid.Row="0" Grid.Column="0" Header="Мили" BorderThickness="2" BorderBrush="Blue" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите км в милях" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите количество миль" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="mileEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20" Click="mileEqual_Click"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в км" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="MileRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5" Text="1,609"/>
+                            <TextBox x:Name="MileSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="KmMileSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="0" Grid.Column="1" Header="Вёрсты" BorderThickness="2" BorderBrush="Red" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите км в версте" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите количество вёрст" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="verstEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20" Click="verstEqual_Click"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в км" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="VerstRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5" Text="1,06678"/>
+                            <TextBox x:Name="VerstSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="KmVerstSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Grid.Column="0" Header="Ярды" BorderThickness="2" BorderBrush="Yellow" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите км в ярде" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите количество ярдов" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="yardEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20" Click="yardEqual_Click"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в км" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="YardRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5" Text="0,009144"/>
+                            <TextBox x:Name="YardSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="KmYardSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Grid.Column="1" Header="Футы" BorderThickness="2" BorderBrush="Green" Margin="3,3,3,3">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                                <RowDefinition Height="100*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200*"/>
+                                <ColumnDefinition Width="325*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Введите км в футе" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Введите количество футов" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <Button x:Name="feetEqual" Grid.Column="0" Grid.Row="2" Content="Рассчитать"  VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="50" FontSize="20" Click="feetEqual_Click"/>
+                            <Label Grid.Column="0" Grid.Row="3" Content="Результат в км" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBox x:Name="FeetRate" Grid.Column="1" Grid.Row="0" Margin="7,7,7,7" Padding="5" Text="0,003048"/>
+                            <TextBox x:Name="FeetSumRate" Grid.Column="1" Grid.Row="1" Margin="7,7,7,7" Padding="5"/>
+                            <TextBox x:Name="FeetKmSum" Grid.Column="1" Grid.Row="3" Margin="7,7,7,7" Padding="5" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
